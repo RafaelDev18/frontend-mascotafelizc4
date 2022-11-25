@@ -9,7 +9,7 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
 })
 export class SeguridadService {
 
-  url = 'https://backend-mascotafelizc4.vercel.app/';
+  url = 'https://backend-mascotafelizc4.vercel.app';
   datosUsuarioEnSesion = new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar()); // revisa el comportamiento de la variable especifica
 
   constructor(private http: HttpClient) { 

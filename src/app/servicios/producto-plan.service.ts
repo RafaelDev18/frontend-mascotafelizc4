@@ -8,7 +8,7 @@ import { SeguridadService } from './seguridad.service';
   providedIn: 'root'
 })
 export class ProductoPlanService {
-  url = 'https://backend-mascotafelizc4.vercel.app/';
+  url = 'https://backend-mascotafelizc4.vercel.app';
   token: string = '';
 
   constructor(private http: HttpClient,

@@ -8,7 +8,7 @@ import { ModeloProspecto } from '../modelos/prospecto.modelo';
 })
 export class ProspectoService {
 
-  url = 'https://backend-mascotafelizc4.vercel.app/';
+  url = 'https://backend-mascotafelizc4.vercel.app';
   token: string = '';
 
   constructor(private http: HttpClient) { }
