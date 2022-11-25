@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url:'https://backend-mascot-prod-mascota-felizc4-zvn8hl.mo6.mogenius.io/'
 };
 
 /*

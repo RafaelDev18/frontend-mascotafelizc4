@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { ModeloIdentificar } from '../modelos/identificar.modelo';
 
@@ -9,14 +10,11 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
 })
 export class SeguridadService {
 
-  url = 'https://backend-mascotafelizc4.vercel.app';
-  token: string = '';
+  url = environment.url;
   datosUsuarioEnSesion = new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar()); // revisa el comportamiento de la variable especifica
 
-  constructor(private http: HttpClient,
-    private seguridadServicio: SeguridadService) { 
+  constructor(private http: HttpClient) { 
     this.VerificarSesionActual(); // cuando se ejecute este servicio verifique el estado de la sesion
-    this.token = this.seguridadServicio.ObtenerToken();
   }
 
   // verifica si hay un sesion activa
@@ -41,8 +39,7 @@ export class SeguridadService {
       clave: clave
     },{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
-      })
+        })
     })
   }
 

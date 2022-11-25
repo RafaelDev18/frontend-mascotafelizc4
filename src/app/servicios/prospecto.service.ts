@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ModeloProspecto } from '../modelos/prospecto.modelo';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { ModeloProspecto } from '../modelos/prospecto.modelo';
 })
 export class ProspectoService {
 
-  url = 'https://backend-mascotafelizc4.vercel.app';
+  url = environment.url;
   token: string = '';
 
   constructor(private http: HttpClient) { }
