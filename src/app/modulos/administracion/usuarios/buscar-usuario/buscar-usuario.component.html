@@ -1,0 +1,51 @@
+<br>
+    <div class="container text-center">
+        <h4>Usuarios</h4>
+        <br>
+        <a class="btn btn-warning"  routerLink="/administracion/crear-usuario">Nuevo Usuario</a>
+        <br>
+        <div class="d-flex justify-content-center alingn-items-center">
+        <br>
+        </div>
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of listadoUsuarios">
+                    <td>
+                        {{usuario.cedula}}                
+                    </td>
+                    <td>
+                        {{usuario.nombres}}                
+                    </td>
+                    <td>
+                        {{usuario.apellidos}}                
+                    </td>
+                    <td>
+                        {{usuario.email}}               
+                    </td>
+                    <td>
+                        {{usuario.rol}}               
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" title="Editar" routerLink="/administracion/editar-usuario/{{usuario.id}}"><i class="fa-solid fa-file-pen"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" title="Eliminar" (click)="EliminarUsuario(usuario.id!)"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <br>

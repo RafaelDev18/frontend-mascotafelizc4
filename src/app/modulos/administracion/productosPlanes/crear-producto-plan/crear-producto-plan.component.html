@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="">
+        <div class="row">
+            <div class="col">
+                <div class="p-2">
+                    <img class="rounded" src="assets/img/MascotasRegistro.png" width="530">
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2">
+                    <div class="container mt-3 bg-secondary rounded">
+                        <form [formGroup]="fgValidador" (ngSubmit)="GuardarProductoPlan()" method="POST"
+                            class="row g-3">
+                            <div class="text-center text-light">
+                                <br>
+                                <h4>Creación de Productos y Servicios </h4>
+                                <br>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="nombre" class="form-label text-light">Nombre</label>
+                                <br>
+                                <input formControlName="nombre" type="text" class="form-control">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="tipo" class="form-label text-light">Tipo</label>
+                                <br>
+                                <select formControlName="tipo" class="form-select" aria-label="Default select example">
+                                    <option value="Producto">Producto</option>
+                                    <option value="Servicio">Servicio</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Debe selecionar un Tipo
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="precio" class="form-label text-light">Precio</label>
+                                <br>
+                                <input formControlName="precio" type="number" class="form-control">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="descripcion" formControlName="descripcion"
+                                    class="form-label text-light">Descripcion</label>
+                                <!--textarea type="text" class="form-control"
+                        value="Escribenos como podemos ayudarte" rows="3"></textarea-->
+                                <input formControlName="descripcion" type="text" class="form-control">
+                            </div>
+                            <div class="col-12 p-3">
+                                <br>
+                                <br>
+                                <button [disabled]="!fgValidador.valid" class="btn btn-warning w-100"
+                                    type="submit">Crear</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br>
+    <br>
+</div>

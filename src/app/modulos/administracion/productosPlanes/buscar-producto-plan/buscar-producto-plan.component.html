@@ -1,0 +1,47 @@
+<br>
+    <div class="container text-center">
+        <h4>Productos y Servicios</h4>
+        <br>
+        <a class="btn btn-warning"  routerLink="/administracion/crear-producto-plan">Nuevo Producto/Plan</a>
+        <br>
+        <div class="d-flex justify-content-center alingn-items-center">
+        <br>
+        </div>
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let productoPlan of listadoPP">
+                    <td>
+                        {{productoPlan.nombre}}                
+                    </td>
+                    <td>
+                        {{productoPlan.tipo}}                
+                    </td>
+                    <td>
+                        {{productoPlan.descripcion}}                
+                    </td>
+                    <td>
+                        {{productoPlan.precio|currency:'COP':'symbol-narrow':'4.0-2'}}               
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" title="Editar" routerLink="/administracion/editar-producto-plan/{{productoPlan.id}}"><i class="fa-solid fa-file-pen"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" title="Eliminar" (click)="EliminarProductoPlan(productoPlan.id!)"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <br>

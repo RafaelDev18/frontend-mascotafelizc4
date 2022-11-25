@@ -1,0 +1,396 @@
+<!--NavBar -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/LogoPaginaBlanco.png" width="60"
+                    height="auto" alt="imagen logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <!--li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li-->
+                    <li *ngIf="seInicioSesion" class="nav-item">
+                        <a class="nav-link active" routerLink="/administracion/listar-usuarios">Usuarios</a>
+                    </li>
+                    <li *ngIf="seInicioSesion" class="nav-item">
+                        <a class="nav-link active" routerLink="/administracion/listar-prospectos">Prospectos</a>
+                    </li>
+                    <li *ngIf="seInicioSesion" class="nav-item">
+                        <a class="nav-link active" routerLink="/administracion/sucursales">Sucursales</a>
+                    </li>
+                    <li *ngIf="seInicioSesion" class="nav-item">
+                        <a class="nav-link active" routerLink="/administracion/solicitudesAfi">Solicitudes
+                            Afiliación</a>
+                    </li>
+                    <div *ngIf="seInicioSesion" class="dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Planes y Productos
+                        </a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item text-light"
+                                    routerLink="/administracion/listar-planes">Planes</a></li>
+                            <li><a class="dropdown-item text-light"
+                                    routerLink="/administracion/listar-productosPlanes">Productos y Servicios</a></li>
+                        </ul>
+                    </div>
+                    <li *ngIf="!seInicioSesion" class="nav-item">
+                        <a class="nav-link active" type="button" data-bs-toggle="modal" data-bs-target="#modalContacto"
+                            data-bs-whatever="@getbootstrap">Contáctanos</a>
+                    </li>
+                    <!--li class="nav-item dropstart">
+                        <a class="nav-link active dropdown-toggle text-warning" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Registrarme
+                        </a>
+
+                        <div class="dropdown-menu bg-dark">
+                            <form class="px-4 py-3 bg-dark">
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">Nombres</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribe tu nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">Apellidos</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribe tu apellido">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1" class="form-label text-light">Número
+                                        de documento</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribre tu documento">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">E-mail</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="email@ejemplo.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">Teléfono</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribe tu telefono">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1" class="form-label text-light">Rol</label>
+                                    <select class="form-select" aria-label="Disabled select example" disabled>
+                                        <option selected>Cliente</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-warning w-100">Registrarme</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-light" href="#">Al registrarte, aceptas nuestras
+                                Condiciones de uso y Política de privacidad.</a>
+                        </div>
+                    </li-->
+                    <li *ngIf="!seInicioSesion" class="nav-item">
+                        <a class="nav-link active text-warning" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modalRegistrarme" data-bs-whatever="@getbootstrap">Registrarme</a>
+                    </li>
+                    <li *ngIf="seInicioSesion" class="nav-item">
+                        <a class="nav-link active text-warning" routerLink="seguridad/cerrarSesion">Cerrar Sesión</a>
+                    </li>
+                    <li *ngIf="!seInicioSesion" class="nav-item">
+                        <a class="nav-link active text-warning" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modalLogin" data-bs-whatever="@getbootstrap">Iniciar Sesión</a>
+                    </li>
+
+
+
+
+                    <!--Registro cliente -->
+                    <!--li class="nav-item dropstart">
+                        <a class="nav-link active dropdown-toggle text-warning" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Registrarme
+                        </a>
+
+                        <div class="dropdown-menu bg-dark">
+                            <form class="px-4 py-3 bg-dark">
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">Nombres</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribe tu nombre">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">Apellidos</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribe tu apellido">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1" class="form-label text-light">Número
+                                        de documento</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribre tu documento">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">E-mail</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="email@ejemplo.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">Teléfono</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="Escribe tu telefono">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1" class="form-label text-light">Rol</label>
+                                    <select class="form-select" aria-label="Disabled select example" disabled>
+                                        <option selected>Cliente</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-warning w-100">Registrarme</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-light" href="#">Al registrarte, aceptas nuestras
+                                Condiciones de uso y Política de privacidad.</a>
+                        </div>
+                    </li-->
+                    <!--Registro cliente -->
+
+                    <!--Login -->
+
+                    <!--li class="nav-item dropstart">
+                        <a class="nav-link active dropdown-toggle text-warning" href="#" id="navbarDropdownMenuLink"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Login
+                        </a>
+                        <div class="dropdown-menu bg-dark">
+                            <form class="px-4 py-3 bg-dark">
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail1"
+                                        class="form-label text-light">E-mail</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                        placeholder="email@ejemplo.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormPassword1"
+                                        class="form-label text-light">Contraseña</label>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword1"
+                                        placeholder="Contraseña">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                        <label class="form-check-label text-light" for="dropdownCheck">
+                                            Recordarme
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-warning w-100">Ingresar</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-light" href="#">¿Aun no eres usuario? Registrarme</a>
+                            <a class="dropdown-item text-light" href="#">¿Olvidaste la contraseña?</a>
+                        </div>
+                    </li-->
+                    <!--Login -->
+                    <!--li class="nav-item">
+                        <a class="nav-link active text-warning" href="#">Login</a>
+                    </li-->
+                </ul>
+            </div>
+
+        </div>
+        <!--NavBar -->
+
+        <!--Modal Inicio sesion-->
+        <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title text-warning" id="exampleModalLabel">Inicio de sesión</h5>
+                        <button type="button" class="btn-close btn-warning" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="fgValidadorSesion" (ngSubmit)="IdentificarUsuario()"
+                            class="row g-3 needs-validation" novalidate>
+                            <div class="col-md-12">
+                                <label class="form-label">E-Mail</label>
+                                <input formControlName="usuario" type="text" class="form-control"
+                                    placeholder="Ingresa tu E-mail" required>
+                                <div class="invalid-feedback">
+                                    Debes ingresar un E-mail valido
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Contraseña</label>
+                                <input formControlName="clave" type="password" class="form-control"
+                                    placeholder="Ingresa tu contraseña" required>
+                                <div class="invalid-feedback">
+                                    Debes ingresar tu contraseña
+                                </div>
+                            </div>
+
+                            <!--div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+                            <label class="form-check-label" for="invalidCheck">
+                                Recordarme
+                            </label>
+                        </div>
+                    </div-->
+                            <div class="col-12">
+                                <button [disabled]="!fgValidadorSesion.valid" class="btn btn-warning w-100"
+                                    type="submit" data-bs-dismiss="modal">
+                                    Ingresar
+                                </button>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-secondary w-100" type="button"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-12">
+                            <a class="item-form text-dark" href="#">¿Aun no eres usuario? Registrarme</a>
+                        </div>
+                        <div class="col-12">
+                            <a class="text-dark" href="#">¿Olvidaste la contraseña?</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal Inicio sesion -->
+
+        <!--Modal Registrarme-->
+        <div class="modal fade" id="modalRegistrarme" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title text-warning" id="exampleModalLabel">Registrarme</h5>
+                        <button type="button" class="btn-close btn-warning" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="fgValidadorUsuario" class="row g-3 needs-validation"
+                            (ngSubmit)="GuardarUsuario()" method="POST">
+                            <div class="col-md-12">
+                                <label class="form-label">Nombres</label>
+                                <input formControlName="nombres" type="text" class="form-control"
+                                    placeholder="Escribe tu nombre" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Apellidos</label>
+                                <input formControlName="apellidos" type="text" class="form-control"
+                                    placeholder="Escribe tus apellidos" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Número de documento</label>
+                                <input formControlName="documento" type="text" class="form-control"
+                                    placeholder="Escribre tu documento" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">E-mail</label>
+                                <input formControlName="email" type="text" class="form-control"
+                                    placeholder="Escribre tu E-Mail" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Teléfono</label>
+                                <input formControlName="telefono" type="text" class="form-control"
+                                    placeholder="Escribre tu Teléfono" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Rol</label>
+                                <select formControlName="rol" class="form-select" aria-label="Default select example">
+                                    <option selected>Cliente</option>
+                                </select>
+
+                                <!-- <input formControlName="rol" value="Cliente" type="text" class="form-control" readonly> -->
+                            </div>
+
+                            <div class="col-12">
+                                <button [disabled]="!fgValidadorUsuario.valid" class="btn btn-warning w-100"
+                                    type="submit" data-bs-dismiss="modal">Registrarme</button>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-secondary w-100" type="button"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal -->
+
+        <!--Modal Contaco-->
+        <div class="modal fade" id="modalContacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title text-warning" id="exampleModalLabel">Formulario de Contacto</h5>
+                        <button type="button" class="btn-close btn-warning" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="fgValidadorProspecto" class="row g-3 needs-validation" (ngSubmit)="GuardarProspecto()">
+                            <div class="col-md-12">
+                                <label class="form-label">Nombres</label>
+                                <input formControlName="nombres" type="text" class="form-control"
+                                    placeholder="Escribe tu nombre" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Apellidos</label>
+                                <input formControlName="apellidos" type="text" class="form-control"
+                                    placeholder="Escribe tus apellidos" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">E-mail</label>
+                                <input formControlName="email" type="text" class="form-control"
+                                    placeholder="Escribre tu E-mail" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Teléfono</label>
+                                <input formControlName="telefono" type="text" class="form-control"
+                                    placeholder="Escribre tu número de teléfono" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Comentario</label>
+                                <input formControlName="comentario" type="text" class="form-control"
+                                    placeholder="Escribrenos en que podemos ayudarte" required>
+                            </div>
+
+                            <!--div class="col-12">
+                                <div class="col-12">
+                                    <a class="dropdown-item text-dark" href="#">Al registrarte, aceptas nuestras
+                                        Condiciones de uso y Política de privacidad.</a>
+                                </div>
+                            </div-->
+                            <div class="col-12">
+                                <button [disabled]="!fgValidadorProspecto.valid" class="btn btn-warning w-100"
+                                    type="submit" data-bs-dismiss="modal">Enviar</button>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-secondary w-100" type="button"
+                                    data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal contacto -->
+    </nav>
+</div>

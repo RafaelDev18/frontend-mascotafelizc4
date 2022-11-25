@@ -1,0 +1,62 @@
+<div class="container container-fluid">
+    <div class="">
+        <div class="row">
+            <div class="col">
+                <div class="p-2">
+                    <img class="rounded" src="assets/img/Usuarios.png" width="640">
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-2">
+                    <div class="container mt-3 bg-secondary rounded">
+                        <form [formGroup]="fgValidadorProspecto" class="row g-3 needs-validation"
+                            (ngSubmit)="EditarProspecto()" method="POST">
+                            <div class="text-center text-light">
+                                <h4>Edición de Prospectos</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label text-light">Nombres</label>
+                                <input formControlName="nombres" type="text" class="form-control"
+                                    placeholder="Escribe tu nombre" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label text-light">Apellidos</label>
+                                <input formControlName="apellidos" type="text" class="form-control"
+                                    placeholder="Escribe tus apellidos" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label text-light">E-mail</label>
+                                <input formControlName="email" type="text" class="form-control"
+                                    placeholder="Escribre tu E-Mail" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label text-light">Teléfono</label>
+                                <input formControlName="telefono" type="text" class="form-control"
+                                    placeholder="Escribre tu Teléfono" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label text-light">Comentario</label>
+                                <input formControlName="comentario" type="text" class="form-control"
+                                    placeholder="Escribre tu documento" required>
+                            </div>
+                            <div class="col-12">
+                                <button [disabled]="!fgValidadorProspecto.valid" class="btn btn-warning w-100"
+                                    type="submit">Actualizar</button>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-secondary w-100" type="button">Cerrar</button>
+                                <br>
+                                <br>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+
+

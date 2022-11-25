@@ -1,0 +1,51 @@
+<br>
+    <div class="container text-center">
+        <h4>Prospectos</h4>
+        
+        <br>
+        <div class="d-flex justify-content-center alingn-items-center">
+        <br>
+        </div>
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Comentario</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prospecto of listadoProspectos">
+                    
+                    <td>
+                        {{prospecto.nombres}}                
+                    </td>
+                    <td>
+                        {{prospecto.apellidos}}                
+                    </td>
+                    <td>
+                        {{prospecto.email}}               
+                    </td>
+                    <td>
+                        {{prospecto.telefono}}               
+                    </td>
+                    <td>
+                        {{prospecto.comentario}}               
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" title="Editar" routerLink="/administracion/editar-prospecto/{{prospecto.id}}"><i class="fa-solid fa-file-pen"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" title="Eliminar" (click)="EliminarProspecto(prospecto.id!)"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <br>
