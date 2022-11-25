@@ -10,10 +10,13 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
 export class SeguridadService {
 
   url = 'https://backend-mascotafelizc4.vercel.app';
+  token: string = '';
   datosUsuarioEnSesion = new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar()); // revisa el comportamiento de la variable especifica
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,
+    private seguridadServicio: SeguridadService) { 
     this.VerificarSesionActual(); // cuando se ejecute este servicio verifique el estado de la sesion
+    this.token = this.seguridadServicio.ObtenerToken();
   }
 
   // verifica si hay un sesion activa
@@ -38,7 +41,7 @@ export class SeguridadService {
       clave: clave
     },{
       headers: new HttpHeaders({
-        
+        'Authorization': `Bearer ${this.token}`
       })
     })
   }
