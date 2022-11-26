@@ -110,7 +110,7 @@ export class BarraNavegacionComponent implements OnInit {
         text: '¡Usuario creado exitosamente!',
         confirmButtonText: 'Aceptar'
       })
-      this.router.navigate(["/administracion/listar-usuarios"]);
+      // this.router.navigate(["/administracion/listar-usuarios"]);
 
     }, (error: any) => {
       Swal.fire({
